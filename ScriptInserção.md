@@ -39,3 +39,9 @@ INSERT INTO livro (titulo, autor, tema, nome_usuario) VALUES
 ('O Poder do Hábito', 'Charles Duhigg', 'Autoajuda', 'Fernando'),
 ('Pai Rico, Pai Pobre', 'Robert T. Kiyosaki', 'Finanças', 'Lúcia'),
 ('O Hobbit', 'J.R.R. Tolkien', 'Fantasia', 'André'),
+('Harry Potter e a Pedra Filosofal', 'J.K. Rowling', 'Fantasia', 'Patrícia'),
+('O Alquimista', 'Paulo Coelho', 'Espiritualidade', 'Gabriel'),
+('A Metamorfose', 'Franz Kafka', 'Ficção', 'Tatiane'),
+('O Diário de Anne Frank', 'Anne Frank', 'Biografia', 'Rafael');
+
+```
