@@ -8,9 +8,15 @@ import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 
+import com.temporintech.multibasepro.repository.auth.UsuarioRepository;
+
 @Configuration
+@EnableJpaRepositories(
+		basePackageClasses = UsuarioRepository.class,
+		entityManagerFactoryRef = "authEntityManager")
 public class AuthDbConfig {
 
 	@Bean
