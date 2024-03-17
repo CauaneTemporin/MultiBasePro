@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.temporintech.multibasepro.model.app.Livro;
-import com.temporintech.multibasepro.repository.LivroRepository;
+import com.temporintech.multibasepro.repository.app.LivroRepository;
 import com.temporintech.multibasepro.service.LivroService;
 
 @Service

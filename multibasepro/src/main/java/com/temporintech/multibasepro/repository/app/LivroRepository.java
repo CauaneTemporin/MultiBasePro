@@ -1,4 +1,4 @@
-package com.temporintech.multibasepro.repository;
+package com.temporintech.multibasepro.repository.app;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
