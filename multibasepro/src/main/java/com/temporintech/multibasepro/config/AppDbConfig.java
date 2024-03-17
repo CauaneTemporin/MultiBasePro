@@ -2,10 +2,6 @@ package com.temporintech.multibasepro.config;
 
 import javax.sql.DataSource;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;	
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -13,9 +9,15 @@ import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 
+import com.temporintech.multibasepro.repository.app.LivroRepository;
+
 @Configuration
+@EnableJpaRepositories(
+		basePackageClasses = LivroRepository.class,
+		entityManagerFactoryRef = "appEntityManager")
 public class AppDbConfig {
 	
 	@Bean
@@ -34,5 +36,6 @@ public class AppDbConfig {
 				.dataSource(dataSource)
 				.packages("com.temporintech.multibasepro.model.app")
 				.build();
-		}
+	}
+	
 }
