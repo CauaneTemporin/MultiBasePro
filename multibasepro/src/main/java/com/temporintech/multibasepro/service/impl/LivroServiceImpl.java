@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.temporintech.multibasepro.model.app.Livro;
 import com.temporintech.multibasepro.repository.app.LivroRepository;
+import com.temporintech.multibasepro.repository.auth.UsuarioRepository;
 import com.temporintech.multibasepro.service.LivroService;
 
 @Service
@@ -14,6 +15,9 @@ public class LivroServiceImpl implements LivroService{
 
 	@Autowired
 	private LivroRepository livroRepository;
+	
+	@Autowired 
+	private UsuarioRepository usuarioRepository;
 	
 	@Override
 	public List<Livro> obterLivros() {
