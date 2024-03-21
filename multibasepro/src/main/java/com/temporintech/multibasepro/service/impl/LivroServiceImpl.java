@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.temporintech.multibasepro.model.app.Livro;
+import com.temporintech.multibasepro.model.auth.Usuario;
 import com.temporintech.multibasepro.repository.app.LivroRepository;
 import com.temporintech.multibasepro.repository.auth.UsuarioRepository;
 import com.temporintech.multibasepro.service.LivroService;
@@ -26,7 +27,14 @@ public class LivroServiceImpl implements LivroService{
 
 	@Override
 	public Livro criar(Livro livro) {
-		return null;
+
+		Usuario usuario = this.usuarioRepository
+				.findById(livro.getCodigoUsuario())
+				.orElseThrow(() -> new IllegalArgumentException("Usuário não encontrado."));
+
+		livro.setNomeUsuario(usuario.getNome());
+		
+		return this.livroRepository.save(livro);
 	}
 
 }
