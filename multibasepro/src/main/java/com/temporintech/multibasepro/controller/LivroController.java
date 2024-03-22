@@ -25,9 +25,19 @@ public class LivroController {
 	public List<Livro> obterLivros() {
 		return this.livroService.obterLivros();
 	}
-
+	
 	@PostMapping
 	public ResponseEntity<Livro> criar(@RequestBody Livro livro) {
-		return null;
+		
+		try {
+			
+			return ResponseEntity
+					.status(HttpStatus.CREATED)
+					.body(this.livroService.criar(livro));
+			
+		} catch (IllegalArgumentException e) {
+			
+			return ResponseEntity.badRequest().build();
+		}
 	}
 }
